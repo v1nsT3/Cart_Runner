@@ -3,8 +3,8 @@ using UnityEngine;
 [System.Serializable]
 public class Cell 
 {
-    private Block _block;
-    private Transform _blockTransform;
+    [SerializeField] private Block _block;
+    [SerializeField] private Transform _blockTransform;
 
     public Cell(Transform transform)
     {
@@ -19,7 +19,6 @@ public class Cell
     public void Add(Block block)
     {
         _block = block;
-        //_block.transform.parent = _blockTransform;
         _block.transform.SetParent(_blockTransform, true);
         _block.transform.position = _blockTransform.position;
         _block.transform.rotation = _blockTransform.rotation;

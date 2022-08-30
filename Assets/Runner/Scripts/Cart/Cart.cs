@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Cart : MonoBehaviour
 {
-    private List<Cell> _blocksPositions = new List<Cell>();
+    [SerializeField] private List<Cell> _blocksPositions = new List<Cell>();
 
     private void Start()
     {
@@ -18,11 +18,12 @@ public class Cart : MonoBehaviour
     {
         if (other.TryGetComponent(out Block block))
         {
-            AddBlock(block);
+            if(block.IsBroken == false)
+                AddBlock(block);
         }
     }
 
-    private void AddBlock(Block block)
+    public void AddBlock(Block block)
     {
         foreach (var cell in _blocksPositions)
         {
