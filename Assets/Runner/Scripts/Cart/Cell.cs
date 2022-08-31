@@ -22,10 +22,18 @@ public class Cell
         _block.transform.SetParent(_blockTransform, true);
         _block.transform.position = _blockTransform.position;
         _block.transform.rotation = _blockTransform.rotation;
+        block.Broken += OnBlockBroken;
+    }
+
+    private void OnBlockBroken(Block block)
+    {
+        block.Broken -= OnBlockBroken;
+        Clear();
     }
 
     public void Clear()
     {
+        _block.transform.parent = null;
         _block = null;
     }
 }

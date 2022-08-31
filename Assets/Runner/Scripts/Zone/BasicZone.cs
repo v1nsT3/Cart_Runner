@@ -14,7 +14,7 @@ public class BasicZone : MonoBehaviour
 
     private BasicZoneCollisionDetector _detector;
     private List<Block> _blocks = new List<Block>();
-    private float _delayPerSec = 0.05f;
+    private float _delayPerSec = 0.01f;
 
     private void Awake()
     {

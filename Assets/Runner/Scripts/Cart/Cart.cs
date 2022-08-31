@@ -14,15 +14,6 @@ public class Cart : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out Block block))
-        {
-            if(block.IsBroken == false)
-                AddBlock(block);
-        }
-    }
-
     public void AddBlock(Block block)
     {
         foreach (var cell in _blocksPositions)
