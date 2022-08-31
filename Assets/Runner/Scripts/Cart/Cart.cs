@@ -5,6 +5,8 @@ public class Cart : MonoBehaviour
 {
     [SerializeField] private List<Cell> _blocksPositions = new List<Cell>();
 
+    public IReadOnlyList<IReadOnlyCell> Cells => _blocksPositions;
+
     private void Start()
     {
         foreach (Transform blockPos in GetComponentInChildren<Transform>())

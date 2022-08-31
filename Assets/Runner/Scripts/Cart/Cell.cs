@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [System.Serializable]
-public class Cell 
+public class Cell : IReadOnlyCell
 {
     [SerializeField] private Block _block;
     [SerializeField] private Transform _blockTransform;
@@ -14,7 +14,7 @@ public class Cell
 
     public bool IsCellEmpty => _block == null;
 
-    public Transform Transform => _blockTransform;
+    public ITransformable Block => _block;
 
     public void Add(Block block)
     {
