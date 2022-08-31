@@ -8,8 +8,8 @@ public class FinishHandler : MonoBehaviour
 {
     [SerializeField] private List<Transform> _pointsBlock = new List<Transform>();
 
-    private float _durationMoveToFinishPoint = 0.5f;
-    private float _delayFinishPerSec = 1.5f;
+    private float _durationMoveToFinishPoint = 0.2f;
+    private float _delayFinishPerSec = 1f;
     private FinishCollisionDetector _detector;
     private Cart _cart = null;
 
@@ -57,7 +57,7 @@ public class FinishHandler : MonoBehaviour
                 blockTransform.DOScale(_pointsBlock[indexPoint].localScale, _durationMoveToFinishPoint);
                 _cart.Cells[i - 1].Clear();
                 indexPoint++;
-                yield return new WaitForSeconds(0.05f);
+                yield return new WaitForSeconds(0.03f);
             }
 
             yield return null;

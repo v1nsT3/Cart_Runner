@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1345521128951555508}
   - component: {fileID: 1345521128951555507}
   - component: {fileID: 1620528727846612680}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1345521128951555505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.3573, z: 0}
-  m_LocalScale: {x: 0.16872849, y: 0.38563317, z: 0.16872849}
+  m_LocalScale: {x: 0.16872849, y: 0.38563317, z: 0.21944828}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1345521129481233168}
@@ -94,7 +94,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345521128951555505}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 1.02
   m_Height: 2.87
@@ -141,7 +141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1345521129481233168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 1345521129481233183}
   m_LocalRotation: {x: 0, y: -0.120396785, z: 0, w: 0.99272585}
   m_LocalPosition: {x: 46.24, y: 0.076, z: 17.34}
-  m_LocalScale: {x: 1.1061, y: 1.1061, z: 1.1061}
+  m_LocalScale: {x: 1.3798597, y: 1.3798597, z: 1.1407272}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1345521130829715017}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 1345521130487417125}
   - component: {fileID: 1345521130487417560}
   - component: {fileID: 1345521130487417127}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 1345521130829715017}
   - component: {fileID: 1345521130829715020}
   - component: {fileID: 1345521130829715019}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

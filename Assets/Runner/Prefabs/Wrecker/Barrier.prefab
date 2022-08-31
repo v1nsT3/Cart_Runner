@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5110840750358315495}
   - component: {fileID: 8864535250604846037}
   - component: {fileID: 4300693920465056062}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 5042039220633103952}
   - component: {fileID: 3432696974188728964}
   - component: {fileID: 8806271407644923592}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 5849874761787993884}
   - component: {fileID: 2565143182155062029}
   - component: {fileID: 875526137806351733}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 7763721568623936262}
   - component: {fileID: 3601483010575227823}
   - component: {fileID: 7848113887515160855}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2794305901130066474}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 8733236677588400101}
   - component: {fileID: 7282097491927048893}
   - component: {fileID: 6795586399937425248}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
