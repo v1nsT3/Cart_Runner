@@ -48,8 +48,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5796237755069052188}
   serializedVersion: 8
-  lengthInSec: 2
-  simulationSpeed: 1
+  lengthInSec: 0.1
+  simulationSpeed: 57.53
   stopAction: 0
   cullingMode: 1
   ringBufferMode: 0
@@ -4791,7 +4791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afbb297e396af284790de01eff0bfae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammount: 5
+  _ammount: 15
   _ammountText: {fileID: 7671398020024266942}
   _particle: {fileID: 5796237755087780912}
   _reachedColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0.70980394}
@@ -4908,7 +4908,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +5
+  m_text: +15
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
   m_sharedMaterial: {fileID: 7374927986402738804, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
@@ -4935,7 +4935,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
+  m_fontSize: 9.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

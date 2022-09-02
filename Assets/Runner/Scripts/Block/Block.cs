@@ -41,7 +41,7 @@ public class Block : MonoBehaviour, ITransformable
     {
         IsBroken = true;
         _rigidbody.isKinematic = false;
-        _rigidbody.AddForce(new Vector3(Random.Range(-1,1), 0, Random.Range(-1, 1)) * Random.Range(0, _force), ForceMode.VelocityChange);
+        _rigidbody.AddForce(new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)) * Random.Range(0, _force), ForceMode.VelocityChange);
         _rigidbody.AddTorque(new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)) * Random.Range(0, _force), ForceMode.VelocityChange);
         transform.DOScale(Vector3.zero, _durationDecreaseScale);
         Broken?.Invoke(this);
