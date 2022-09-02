@@ -5,6 +5,7 @@ namespace RunnerMovementSystem.Examples
 {
     public class CameraFollowing : MonoBehaviour
     {
+        [SerializeField] private RoadSegment _roadSegment;
         [SerializeField] private FinishHandler _finishHandler;
         [SerializeField] private Transform _finishCameraPoint;
         [SerializeField] private float _moveSpeed;

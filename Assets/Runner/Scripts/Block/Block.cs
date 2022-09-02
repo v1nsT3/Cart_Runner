@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 [RequireComponent(typeof(BlockCollisionDetector))]
 [RequireComponent(typeof(Rigidbody))]
@@ -8,6 +9,7 @@ public class Block : MonoBehaviour, ITransformable
     private BlockCollisionDetector _detector;
     private Rigidbody _rigidbody;
     private float _force = 4f;
+    private float _durationDecreaseScale = 4f;
 
     public bool IsBroken { get; private set; } = false;
 
@@ -39,7 +41,9 @@ public class Block : MonoBehaviour, ITransformable
     {
         IsBroken = true;
         _rigidbody.isKinematic = false;
-        _rigidbody.AddForce((transform.up + transform.forward) * Random.Range(0, _force), ForceMode.Impulse);
+        _rigidbody.AddForce(new Vector3(Random.Range(-1,1), 0, Random.Range(-1, 1)) * Random.Range(0, _force), ForceMode.VelocityChange);
+        _rigidbody.AddTorque(new Vector3(Random.Range(-1, 1), 0, Random.Range(-1, 1)) * Random.Range(0, _force), ForceMode.VelocityChange);
+        transform.DOScale(Vector3.zero, _durationDecreaseScale);
         Broken?.Invoke(this);
     }
 

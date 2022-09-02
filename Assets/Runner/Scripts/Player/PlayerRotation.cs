@@ -7,7 +7,7 @@ public class PlayerRotation : MonoBehaviour
     [SerializeField] private Transform _stickMan;
     [SerializeField] private RoadSegment _targetSegment;
 
-    private float _maxOffset = 3.5f;
+    private float _maxOffset = 2.8f;
 
     private float _currentOffset => _targetSegment.GetOffsetByPosition(_stickMan.position);
     private bool _isOnRoad => _currentOffset >= -_maxOffset && _currentOffset <= _maxOffset;
