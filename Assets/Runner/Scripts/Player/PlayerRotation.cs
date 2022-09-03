@@ -6,43 +6,45 @@ public class PlayerRotation : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Transform _stickMan;
     [SerializeField] private RoadSegment _targetSegment;
+    [SerializeField] private float _border;
 
-    private float _maxOffset = 2.8f;
+    private float _maxOffset;
+    private Vector3 _futurePosition;
+    private float _distance;
 
+    private float _futureOffset => _targetSegment.GetOffsetByPosition(_futurePosition);
     private float _currentOffset => _targetSegment.GetOffsetByPosition(_stickMan.position);
-    private bool _isOnRoad => _currentOffset >= -_maxOffset && _currentOffset <= _maxOffset;
+    private bool _isOnRoad => _futureOffset >= -_maxOffset && _futureOffset <= _maxOffset;
+
+    private void Start()
+    {
+        _maxOffset = _targetSegment.Width - _border;
+        _distance = Vector3.Distance(transform.position, _stickMan.position);
+    }
 
     private void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * -1;
-        float speed = mouseX * _rotationSpeed * Time.deltaTime;
+        float angle = mouseX * _rotationSpeed * Time.deltaTime;
 
-        //Quaternion quaternion = _cyl.rotation;
-        //quaternion *= Quaternion.Euler(0, speed, 0);
-        //Vector3 vector3 = _cyl.position;
-        //vector3 += quaternion * new Vector3(0, 0, Vector3.Distance(transform.position, _stickMan.position));
-        //_pos = vector3;
+        Quaternion _futureRotation = transform.rotation * Quaternion.Euler(0, angle, 0);
+        _futurePosition = transform.position - (_futureRotation * new Vector3(0, 0, _distance));
 
-        //float offset = _targetSegment.GetOffsetByPosition(_pos);
+        if (_isOnRoad == true && Input.GetKey(KeyCode.Mouse0))
+            Rotate(_futureRotation, _rotationSpeed);
+        else
+            BackRotate();
+    }
 
-        //Debug.Log(offset);
+    private void Rotate(Quaternion targetRotation, float speed)
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+    }
 
-        //if (offset >= -_maxOffset && offset <= _maxOffset)
-        //{
-        //    //targetRotation = transform.rotation * Quaternion.Euler(0, speed, 0);
-        //}
-        //else
-        //{
-        //    transform.rotation *= Quaternion.Euler(0, offset < -1 ? -1 : 1 * _rotationSpeed * Time.deltaTime, 0);
-        //}
-
-        if (_isOnRoad == false)
-        {
-            transform.rotation *= Quaternion.Euler(0, _currentOffset < -1 ? -1 : 1 * _rotationSpeed * Time.deltaTime, 0);
-        }
-        else if(Input.GetKey(KeyCode.Mouse0))
-        {
-            transform.rotation *= Quaternion.Euler(0, speed, 0);
-        }
+    private void BackRotate()
+    {
+        Quaternion rotation = _targetSegment.GetRotationAtDistance(_targetSegment.GetClosestDistanceAlongPath(transform.position)) * Quaternion.Euler(0, 0, 90f);
+        float speed = Mathf.Lerp(_rotationSpeed, 0, Mathf.Abs(_maxOffset / _currentOffset));
+        Rotate(rotation, speed);
     }
 }
